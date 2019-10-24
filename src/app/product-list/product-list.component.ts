@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from './product';
+import { ProductModel } from './product-model';
+import { ProductData } from './product-data';
 
 @Component({
   selector: 'app-product-list',
@@ -8,27 +9,12 @@ import { Product } from './product';
 })
 export class ProductListComponent implements OnInit {
 
-  public products: Product[] = [
-    {
-      name: 'Phone XL',
-      price: 799,
-      description: 'A large phone with one of the best screens'
-    },
-    {
-      name: 'Phone Mini',
-      price: 699,
-      description: 'A great phone with one of the best cameras'
-    },
-    {
-      name: 'Phone Standard',
-      price: 299,
-      description: ''
-    }
-  ];
+  public products: ProductModel[];
 
   constructor() { }
 
   ngOnInit() {
+    this.products = ProductData;
   }
 
   public share() {
